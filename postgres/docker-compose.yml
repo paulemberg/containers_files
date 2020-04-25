@@ -6,7 +6,10 @@ services:
       - db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
- 
+    environment:
+      POSTGRES_DB: "db"
+      POSTGRES_HOST_AUTH_METHOD: "trust"
+
 volumes:
   db-data:
     driver: local

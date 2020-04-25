@@ -9,6 +9,11 @@ services:
     restart: always
     ports:
       - 9200:9200
+    ulimits:
+      nproc: 262144
+      nofile:
+        soft: 20000
+        hard: 65536
     deploy:
       resources:
         limits:

@@ -12,7 +12,7 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - /home/caio/projects/containers_files/mongo/volume:/data/db
+      - /home/francardoso/projects/containers_files/mongo/volume:/data/db
     networks:
       - mongo-compose-network
 

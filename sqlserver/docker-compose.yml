@@ -7,14 +7,14 @@ services:
   mydb:
     image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
     ports:
-      - 1443:1443
+      - 1433:1433
     environment: 
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "1234@asdf"
+      SA_PASSWORD: "sa"
     volumes: 
-      - /home/caio/projects/sqlserver/volume/backups:/var/opt/mssql/backups
-      - /home/caio/projects/sqlserver/volume/sqlserver:/var/opt/sqlserver
-      - /home/caio/projects/sqlserver/volume/mssql:/var/opt/mssql
+      - /home/francisco/projects/sqlserver/volume/backups:/var/opt/mssql/backups
+      - /home/francisco/projects/sqlserver/volume/sqlserver:/var/opt/sqlserver
+      - /home/francisco/projects/sqlserver/volume/mssql:/var/opt/mssql
 
  
 volumes:

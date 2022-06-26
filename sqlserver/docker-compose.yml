@@ -1,21 +1,20 @@
-#docker run -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=yourStrong(!)Password' -p 1433:1433 -d mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+#docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=yourStrong(!)Password" -p 1433:1433 -d mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
 
 
 
 version: '3'
 services:
   mydb:
-    image: mcr.microsoft.com/mssql/server:2017-CU8-ubuntu
+    image: mcr.microsoft.com/mssql/server:2019-CU15-ubuntu-20.04
     ports:
       - 1433:1433
     environment: 
       ACCEPT_EULA: "Y"
-      SA_PASSWORD: "sa"
+      SA_PASSWORD: "sabcd1234AB**&"
     volumes: 
-      - /home/francisco/projects/sqlserver/volume/backups:/var/opt/mssql/backups
-      - /home/francisco/projects/sqlserver/volume/sqlserver:/var/opt/sqlserver
-      - /home/francisco/projects/sqlserver/volume/mssql:/var/opt/mssql
-
+      - /home/berg/projects/sqlserver/volume/backups:/var/opt/mssql/backups
+      - /home/berg/projects/sqlserver/volume/sqlserver:/var/opt/sqlserver
+      - /home/berg/projects/sqlserver/volume/mssql:/var/opt/data 
  
 volumes:
   db-data:

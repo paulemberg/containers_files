@@ -1,7 +1,7 @@
 version: '3'
 services:
   mydb:
-    image: postgres  
+    image: paulemberg/general:postgresdev  
     environment: 
       POSTGRES_DB: "mydb"
       POSTGRES_HOST_AUTH_METHOD: "trust" #is not recomended to production
